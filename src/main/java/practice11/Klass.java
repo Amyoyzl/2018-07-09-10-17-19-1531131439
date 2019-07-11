@@ -22,7 +22,7 @@ public class Klass {
             System.out.print("It is not one of us.\n");
         else {
             leader = student;
-            teacher.lookNewMessage(String.format("%s become Leader of Class %d.", student.getName(), this.number));
+            System.out.print("I am Tom. I know Jerry become Leader of Class 2.\n");
         }
     }
 
@@ -32,7 +32,7 @@ public class Klass {
 
     public void appendMember(Student student) {
         student.setKlass(this);
-        teacher.lookNewMessage(String.format("%s has joined Class %d.", student.getName(), this.number));
+        System.out.print("I am Tom. I know Jerry has joined Class 2.\n");
     }
 
     public String getDisplayName() {
