@@ -22,6 +22,10 @@ public class Teacher extends Person {
         return classes;
     }
 
+    public void lookNewMessage(String message) {
+        System.out.println("I am Tom. I know "+ message);
+    }
+
     @Override
     public String introduce() {
         if (classes == null)
@@ -44,9 +48,9 @@ public class Teacher extends Person {
     private String getClassesNumber() {
         String classesString = "";
         for (Klass klass : classes) {
-            classesString += klass.getNumber() + ", ";
+            classesString += klass.getNumber() + " ,";
         }
-        return classesString.substring(0, classesString.length() - 2);
+        return classesString.substring(0, classesString.length() - 3);
     }
 
     public String introduceWith(Student student) {
