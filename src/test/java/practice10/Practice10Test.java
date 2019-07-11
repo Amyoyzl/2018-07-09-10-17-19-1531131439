@@ -161,4 +161,5 @@ public class Practice10Test {
         Student jerry = new Student(1, "Jerry", 8, new Klass(2));
         assertThat(tom.introduceWith(jerry)).isEqualTo("My name is Tom. I am 21 years old. I am a Teacher. I don't teach Jerry.");
     }
+
 }

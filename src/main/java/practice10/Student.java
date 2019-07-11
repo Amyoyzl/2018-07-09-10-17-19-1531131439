@@ -17,6 +17,14 @@ public class Student extends Person {
         return klass;
     }
 
+    public boolean isIn(Teacher teacher) {
+        for (Klass klass : teacher.getClasses()) {
+            if (klass == this.klass)
+                return true;
+        }
+        return false;
+    }
+
     @Override
     public String introduce() {
         if (this == klass.getLeader())

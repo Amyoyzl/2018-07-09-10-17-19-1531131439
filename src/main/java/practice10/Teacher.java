@@ -15,8 +15,16 @@ public class Teacher extends Person {
         super(id, name, age);
     }
 
-    public LinkedList<Klass> getKlass() {
+    public LinkedList<Klass> getClasses() {
         return classes;
+    }
+
+    public boolean isTeaching(Student student) {
+        for (Klass klass : classes) {
+            if (student.getKlass() == klass)
+                return true;
+        }
+        return false;
     }
 
     @Override
@@ -32,10 +40,19 @@ public class Teacher extends Person {
 
     private String getClassesNumber() {
         String classesString = "";
-        for(Klass klass : classes) {
-            classesString += klass.getNumber() + " ,";
+        for (Klass klass : classes) {
+            classesString += klass.getNumber() + ", ";
         }
-        return classesString.substring(0, classesString.length() - 3);
+        return classesString.substring(0, classesString.length() - 2);
+    }
+
+    public String introduceWith(Student student) {
+        if (isTeaching(student))
+            return String.format("My name is %s. I am %d years old. I am a Teacher. I teach %s.",
+                    super.getName(), super.getAge(), student.getName());
+        else
+            return String.format("My name is %s. I am %d years old. I am a Teacher. I don't teach %s.",
+                    super.getName(), super.getAge(), student.getName());
     }
 
 }
