@@ -26,7 +26,7 @@ public class Teacher extends Person {
     public String introduce() {
         if (classes == null)
             return String.format("My name is %s. I am %d years old. I am a Teacher. I teach No Class.",
-                    super.getName(), super.getAge());
+                    getName(), getAge());
         else
             return String.format("My name is %s. I am %d years old. I am a Teacher. I teach Class %s.",
                     super.getName(), super.getAge(), getClassesNumber());
@@ -39,6 +39,14 @@ public class Teacher extends Person {
                 return true;
         }
         return false;
+    }
+
+    public void setLeaderMessage(Klass klass, Student student) {
+        System.out.print(String.format("I am %s. I know %s become Leader of Class %d.\n", getName(), student.getName(), klass.getNumber()));
+    }
+
+    public void addMemberMessage(Klass klass, Student student) {
+        System.out.print(String.format("I am %s. I know %s has joined Class %d.\n", getName(), student.getName(), klass.getNumber()));
     }
 
     private String getClassesNumber() {
